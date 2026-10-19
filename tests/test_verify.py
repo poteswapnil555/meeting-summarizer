@@ -159,3 +159,9 @@ def test_dedupe_by_quote_and_by_owner_task_and_keeps_order(v):
 
 def test_norm():
     assert norm("  Hello,   WORLD! ’s ") == "hello world s"
+
+
+@pytest.mark.parametrize("owner", ["the team", "The Team", "an owner to be decided", "a person"])
+def test_articles_do_not_make_a_generic_owner_specific(v, owner):
+    (item,), _ = verify_items("action_item", [action(owner=owner)], v)
+    assert item.owner is None and (item.flags == [] or "not found" in item.flags[0])

@@ -81,7 +81,7 @@ class Verifier:
             return None, None
         if not isinstance(owner, str):
             return None, "owner is not text; cleared"
-        n = norm(owner)
+        n = re.sub(r"^(?:the|a|an)\s+", "", norm(owner))  # "the team" is as generic as "team"
         if n in GENERIC_OWNERS or len(n) < 2:
             return None, None
         if n in self._speakers or f" {n} " in self._full:
