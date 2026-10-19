@@ -149,11 +149,11 @@ fair reading of the quote is for the reader to judge, which is why every item is
 - In the live run 1 of 12 gold action items was missed and 2 extra items (a decision and an open question) were kept; one extra open question had a real quote that is not a question, which the quote check cannot catch.
 - Only one multi-chunk transcript (2 chunks) was evaluated live, so the map-reduce merge was exercised once; long-transcript behaviour is covered by mock tests only.
 - The public demo transcript is long (36 chunks in full) and has not been run through the tool.
-- The Docker image has not been built or verified yet.
+- The Docker image builds and the mock evaluation runs inside it (`docker run --rm --entrypoint python meeting-summarizer -m meeting_summarizer.evaluate --mock`). This is a plumbing check with a fake model, not a live run and not an accuracy measurement.
 
 ## Next steps
 - **Speech-to-text:** an optional audio input using a small local model (for example faster-whisper `tiny.en`). Whisper gives timestamps but no speaker names, so audio input would produce transcripts without speakers; not implemented, and nothing in this repo claims it.
 - Add live test cases designed to tempt the model into inventing items (and into naming people who are not in the transcript), so the rejection checks are exercised against real model output.
 - Consider a stricter check that an open question's quote actually contains a question, and a larger gold set with items marked as acceptable alternatives.
 - Optional date interpretation (turn "next Wednesday" into a date given the meeting date) as a separate, clearly labelled step.
-- Build and verify the Docker image.
+- Run the live evaluation inside Docker (pass variables with `--env-file`).
