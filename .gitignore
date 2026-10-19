@@ -1,0 +1,12 @@
+.env
+*.env
+!.env.example
+.secrets/
+LocalDocs/
+__pycache__/
+*.pyc
+.venv/
+.pytest_cache/
+data/private/
+# Third-party demo transcript: downloaded by scripts/download_transcript.py, never committed
+data/demo/

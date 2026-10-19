@@ -1,0 +1,4 @@
+openai>=1.40,<3
+azure-identity>=1.17,<2
+pypdf>=4.2,<6
+pytest>=8.2,<9
