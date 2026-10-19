@@ -1,0 +1,320 @@
+{
+  "mode": "live",
+  "transcripts": 5,
+  "transcripts_status_ok": 5,
+  "decisions": {
+    "gold": 7,
+    "found": 7,
+    "extra_not_in_gold": 1
+  },
+  "action_items": {
+    "gold": 12,
+    "found": 11,
+    "extra_not_in_gold": 0
+  },
+  "open_questions": {
+    "gold": 4,
+    "found": 4,
+    "extra_not_in_gold": 1
+  },
+  "no_item_transcripts_with_zero_items": "1/1",
+  "proposed_items_rejected_by_code": 0,
+  "kept_items_with_owner_or_due_cleared": 0,
+  "llm_calls": 7,
+  "details": [
+    {
+      "id": "t1",
+      "status": "ok",
+      "chunks": 1,
+      "llm_calls": 1,
+      "summary": "The team met to plan sprint 14 and address a critical checkout bug. They prioritized fixing the bug, assigned tasks for the fix and brand color acquisition, and rescheduled the sprint demo. The status of the staging server upgrade remains uncertain.",
+      "warnings": [],
+      "error": null,
+      "rejected": [],
+      "kinds": {
+        "decisions": {
+          "gold_found": [
+            {
+              "keywords": [
+                "checkout"
+              ],
+              "found": true
+            },
+            {
+              "keywords": [
+                "demo",
+                "thursday"
+              ],
+              "found": true
+            }
+          ],
+          "extra": []
+        },
+        "action_items": {
+          "gold_found": [
+            {
+              "keywords": [
+                "fix",
+                "checkout"
+              ],
+              "found": true
+            },
+            {
+              "keywords": [
+                "review"
+              ],
+              "found": false
+            },
+            {
+              "keywords": [
+                "brand colo",
+                "sam"
+              ],
+              "found": true
+            }
+          ],
+          "extra": []
+        },
+        "open_questions": {
+          "gold_found": [
+            {
+              "keywords": [
+                "staging"
+              ],
+              "found": true
+            }
+          ],
+          "extra": []
+        }
+      }
+    },
+    {
+      "id": "t2",
+      "status": "ok",
+      "chunks": 1,
+      "llm_calls": 1,
+      "summary": "The team discussed the status of the pricing page and the beta invite list. It was agreed that the pricing page will be published only after legal approval of the refund wording. Additionally, Aisha committed to providing the beta invite list by Monday.",
+      "warnings": [],
+      "error": null,
+      "rejected": [],
+      "kinds": {
+        "decisions": {
+          "gold_found": [
+            {
+              "keywords": [
+                "pricing",
+                "legal"
+              ],
+              "found": true
+            }
+          ],
+          "extra": []
+        },
+        "action_items": {
+          "gold_found": [
+            {
+              "keywords": [
+                "legal"
+              ],
+              "found": true
+            },
+            {
+              "keywords": [
+                "invite"
+              ],
+              "found": true
+            }
+          ],
+          "extra": []
+        },
+        "open_questions": {
+          "gold_found": [
+            {
+              "keywords": [
+                "free|discount"
+              ],
+              "found": true
+            }
+          ],
+          "extra": []
+        }
+      }
+    },
+    {
+      "id": "t3",
+      "status": "ok",
+      "chunks": 1,
+      "llm_calls": 1,
+      "summary": "The team reviewed the recent forty-minute outage caused by an expired certificate on the payment gateway. They identified a lack of monitoring alerts as the primary gap and agreed on steps to prevent future occurrences. These steps include implementing new alerts, creating a runbook, and documenting the incident.",
+      "warnings": [],
+      "error": null,
+      "rejected": [],
+      "kinds": {
+        "decisions": {
+          "gold_found": [
+            {
+              "keywords": [
+                "alert",
+                "expiry"
+              ],
+              "found": true
+            },
+            {
+              "keywords": [
+                "runbook"
+              ],
+              "found": true
+            }
+          ],
+          "extra": []
+        },
+        "action_items": {
+          "gold_found": [
+            {
+              "keywords": [
+                "alert"
+              ],
+              "found": true
+            },
+            {
+              "keywords": [
+                "postmortem"
+              ],
+              "found": true
+            },
+            {
+              "keywords": [
+                "runbook"
+              ],
+              "found": true
+            }
+          ],
+          "extra": []
+        },
+        "open_questions": {
+          "gold_found": [
+            {
+              "keywords": [
+                "automatic"
+              ],
+              "found": true
+            }
+          ],
+          "extra": []
+        }
+      }
+    },
+    {
+      "id": "t4",
+      "status": "ok",
+      "chunks": 1,
+      "llm_calls": 1,
+      "summary": "The team held a brief status update meeting to review current progress. Kim reported that backend work is proceeding well with successful tests and deployment, while Lee confirmed that design tasks are on track. Jo noted that the roadmap remains unchanged, and all participants confirmed they have no blockers.",
+      "warnings": [],
+      "error": null,
+      "rejected": [],
+      "kinds": {
+        "decisions": {
+          "gold_found": [],
+          "extra": []
+        },
+        "action_items": {
+          "gold_found": [],
+          "extra": []
+        },
+        "open_questions": {
+          "gold_found": [],
+          "extra": []
+        }
+      },
+      "expected_no_items_and_got_none": true
+    },
+    {
+      "id": "t5",
+      "status": "ok",
+      "chunks": 2,
+      "llm_calls": 3,
+      "summary": "The team reviewed open hiring roles, deciding to keep both positions open while prioritizing backend interviews. They finalized the data migration plan, which includes a schema freeze and a weekend cutover window. The reporting team will receive a reminder regarding this schedule. Regarding the customer portal, the team decided to defer search performance improvements until after the migration is complete. Additionally, Hana volunteered to manage the upcoming customer survey.",
+      "warnings": [],
+      "error": null,
+      "rejected": [],
+      "kinds": {
+        "decisions": {
+          "gold_found": [
+            {
+              "keywords": [
+                "roles",
+                "backend"
+              ],
+              "found": true
+            },
+            {
+              "keywords": [
+                "weekend",
+                "cutover"
+              ],
+              "found": true
+            }
+          ],
+          "extra": [
+            {
+              "text": "Search performance improvements for the customer portal will be deferred until after the cutover.",
+              "owner": null,
+              "due": null,
+              "quote": "Agreed, but that touches the migration tables, so it should wait until after the cutover.",
+              "flags": []
+            }
+          ]
+        },
+        "action_items": {
+          "gold_found": [
+            {
+              "keywords": [
+                "interview"
+              ],
+              "found": true
+            },
+            {
+              "keywords": [
+                "job board"
+              ],
+              "found": true
+            },
+            {
+              "keywords": [
+                "reminder"
+              ],
+              "found": true
+            },
+            {
+              "keywords": [
+                "survey"
+              ],
+              "found": true
+            }
+          ],
+          "extra": []
+        },
+        "open_questions": {
+          "gold_found": [
+            {
+              "keywords": [
+                "licen"
+              ],
+              "found": true
+            }
+          ],
+          "extra": [
+            {
+              "text": "What is the specific cutover window for the data migration?",
+              "owner": null,
+              "due": null,
+              "quote": "The reporting team is nervous about downtime. They asked for a clear cutover window.",
+              "flags": []
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

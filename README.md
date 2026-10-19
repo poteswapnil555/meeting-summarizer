@@ -96,16 +96,45 @@ code rejected, how many kept items had an owner or due date cleared, and whether
 - **Speech-to-text is not included** (see Next steps); the project only claims what it shows.
 
 ## Results
-Live LLM results on the five synthetic transcripts (`eval/gold.json`: 7 decisions, 12 action items, 4 open questions, plus one transcript with none):
+**Live run:** LLM `gemini-3.1-flash-lite` via an OpenAI-compatible endpoint, on the five synthetic transcripts in `eval/transcripts/`
+(gold: `eval/gold.json`). **These numbers apply to these 5 synthetic transcripts only.** They are short, invented and written by the
+author, and matching is by keywords, so treat the run as a small sanity check, not a benchmark. Raw output: `docs/eval_live.json`.
+The run used 7 LLM calls (t1-t4: one call each; t5: 2 chunks plus 1 merge call). Nothing was tuned after seeing the results and the run was not repeated.
 
 | Measure | Result |
 |---|---|
-| Decisions found / in gold (7) | not yet measured |
-| Action items found (right owner, task and due date) / in gold (12) | not yet measured |
-| Open questions found / in gold (4) | not yet measured |
-| Extra items not in the gold list (decisions / action items) | not yet measured |
-| No-items transcript: zero decisions and action items returned | not yet measured |
-| Items the model proposed that the code rejected | not yet measured |
+| Transcripts processed with status `ok` | 5/5 |
+| Decisions found / in gold | 7/7 (1 extra not in gold) |
+| Action items found (right owner, task and due date) / in gold | 11/12 (0 extra) |
+| Open questions found / in gold | 4/4 (1 extra not in gold) |
+| No-items transcript (t4): zero decisions and action items returned | yes (1/1) |
+| Items the model proposed that the code rejected | 0 |
+| Kept items whose owner or due date the code cleared | 0 |
+
+**The one missed action item** (t1, from `docs/eval_live.json`): Omar reviewing Lena's pull request. The transcript line is
+`[00:01:25] Omar: Good. I will review Lena's pull request as soon as it is ready.` That is a clear first-person commitment with no due date, so
+the gold item is supported by the text. The model returned only two action items for t1 (the run file shows no unmatched action item, so it was not
+produced in a different form), and its t1 summary does not mention the review either. The run file does not record why it was left out.
+
+**The 2 extra items** (produced by the model and kept because their quotes exist; they are not in the gold list). Exactly as produced:
+
+| Kind | Text | Quote (speaker, transcript t5) |
+|---|---|---|
+| Decision | "Search performance improvements for the customer portal will be deferred until after the cutover." | Ben: "Agreed, but that touches the migration tables, so it should wait until after the cutover." |
+| Open question | "What is the specific cutover window for the data migration?" | Dev: "The reporting team is nervous about downtime. They asked for a clear cutover window." |
+
+What the transcript shows:
+- *Extra decision:* Dev says an index would fix the slow search, Ben says it "should wait until after the cutover", and the chair replies "Fine. Let's talk about the portal roadmap next quarter, not now." That is a proposal followed by an acceptance, but nobody says "decided" or "agreed" about it, so the transcript does not clearly make it a decision or clearly rule it out. It was not in the gold list.
+- *Extra open question:* the quote is a statement, not a question; nobody in t5 asks what the cutover window is. The meeting later agrees on "a weekend" for the final cutover without a specific date. The item is the model's inference from a request in the transcript, and the quote does not contain a question.
+
+**The code check that rejects invented items did not trigger in this run.** The model proposed no item that the quote check rejected
+(0 rejected) and no owner or due date had to be cleared (0). So the rejection and clearing logic was **not exercised live**; it is covered by the
+unit tests and by the scripted `--mock` run only (which feeds the t4 transcript invented items on purpose). A clean live run does not show the
+checks would catch an invention, only that this model did not produce one on these five transcripts.
+
+**A quote check proves a quote exists, not that it supports the claim.** Both extra items above carry real quotes from the transcript, yet the
+open question's quote is not a question. The checks guarantee the quote is in the transcript, in one turn; whether the item written next to it is a
+fair reading of the quote is for the reader to judge, which is why every item is shown with its quote.
 
 ## Limitations
 - **A real quote can be attached to a wrong claim.** The checks prove the quote exists in the transcript; they cannot prove it supports the task, owner or decision written next to it. Each item shows its quote so a reader can check.
@@ -116,11 +145,15 @@ Live LLM results on the five synthetic transcripts (`eval/gold.json`: 7 decision
 - **Privacy:** the transcript text is sent to your LLM provider.
 - English transcripts only; no speaker identification from audio.
 - The evaluation set is five short invented meetings written by the author; keyword matching is a rough test; results will apply to that set only.
+- In the live run the code's rejection and clearing checks never triggered (0 rejected, 0 cleared), so they are verified by unit tests and the scripted mock run, not by a live invention.
+- In the live run 1 of 12 gold action items was missed and 2 extra items (a decision and an open question) were kept; one extra open question had a real quote that is not a question, which the quote check cannot catch.
+- Only one multi-chunk transcript (2 chunks) was evaluated live, so the map-reduce merge was exercised once; long-transcript behaviour is covered by mock tests only.
 - The public demo transcript is long (36 chunks in full) and has not been run through the tool.
 - The Docker image has not been built or verified yet.
 
 ## Next steps
 - **Speech-to-text:** an optional audio input using a small local model (for example faster-whisper `tiny.en`). Whisper gives timestamps but no speaker names, so audio input would produce transcripts without speakers; not implemented, and nothing in this repo claims it.
-- Run the live evaluation and fill in the results table; use the per-transcript details to explain each miss.
+- Add live test cases designed to tempt the model into inventing items (and into naming people who are not in the transcript), so the rejection checks are exercised against real model output.
+- Consider a stricter check that an open question's quote actually contains a question, and a larger gold set with items marked as acceptable alternatives.
 - Optional date interpretation (turn "next Wednesday" into a date given the meeting date) as a separate, clearly labelled step.
 - Build and verify the Docker image.
