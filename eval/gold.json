@@ -1,0 +1,65 @@
+[
+  {
+    "id": "t1", "file": "transcripts/t1_sprint_planning.txt",
+    "decisions": [
+      {"text": "Fix the checkout bug first, before any new features", "quote": "we decided to fix the checkout bug first, before any new features", "keywords": ["checkout"]},
+      {"text": "Move the sprint demo from Friday to Thursday afternoon", "quote": "We also agreed to move the sprint demo from Friday to Thursday afternoon", "keywords": ["demo", "thursday"]}
+    ],
+    "action_items": [
+      {"owner": "Lena", "task": "Write a fix for the checkout bug", "due": "Wednesday", "quote": "I will write a fix for the checkout bug by Wednesday", "keywords": ["fix", "checkout"]},
+      {"owner": "Omar", "task": "Review Lena's pull request", "due": null, "quote": "I will review Lena's pull request as soon as it is ready", "keywords": ["review"]},
+      {"owner": "Omar", "task": "Ask Sam for the brand colours", "due": "Tuesday", "quote": "Omar, please ask Sam for the brand colours by Tuesday", "keywords": ["brand colo", "sam"]}
+    ],
+    "open_questions": [
+      {"text": "Will the staging server be upgraded before the demo?", "quote": "do we know if the staging server will be upgraded before the demo", "keywords": ["staging"]}
+    ]
+  },
+  {
+    "id": "t2", "file": "transcripts/t2_product_sync.vtt",
+    "decisions": [
+      {"text": "Publish the pricing page only after legal approves", "quote": "we will publish the pricing page only after legal approves", "keywords": ["pricing", "legal"]}
+    ],
+    "action_items": [
+      {"owner": "Tom", "task": "Chase legal for the refund wording", "due": "tomorrow", "quote": "I will chase legal for the refund wording tomorrow", "keywords": ["legal"]},
+      {"owner": "Aisha", "task": "Send the invite list to Priya", "due": "Monday", "quote": "I will send the invite list to Priya by Monday", "keywords": ["invite"]}
+    ],
+    "open_questions": [
+      {"text": "Should the beta be free or discounted?", "quote": "Should the beta be free or discounted", "keywords": ["free|discount"]}
+    ]
+  },
+  {
+    "id": "t3", "file": "transcripts/t3_incident_review.txt",
+    "decisions": [
+      {"text": "Add certificate expiry alerts for every production service", "quote": "we decided to add certificate expiry alerts for every production service", "keywords": ["alert", "expiry"]},
+      {"text": "On-call engineers get a runbook for certificate renewal", "quote": "We also decided that on-call engineers will get a runbook for certificate renewal", "keywords": ["runbook"]}
+    ],
+    "action_items": [
+      {"owner": "Marcus", "task": "Set up the expiry alerts", "due": "end of next week", "quote": "I will set up the expiry alerts by the end of next week", "keywords": ["alert"]},
+      {"owner": "Elena", "task": "Write the postmortem document and share it with the team", "due": "Friday", "quote": "Elena, please write the postmortem document and share it with the team by Friday", "keywords": ["postmortem"]},
+      {"owner": "Marcus", "task": "Draft the runbook", "due": null, "quote": "I can draft that runbook, no deadline needed", "keywords": ["runbook"]}
+    ],
+    "open_questions": [
+      {"text": "Should we move to automatic certificate renewal?", "quote": "should we move to automatic certificate renewal altogether", "keywords": ["automatic"]}
+    ]
+  },
+  {
+    "id": "t4", "file": "transcripts/t4_status_round_no_actions.txt", "expect_no_items": true,
+    "decisions": [], "action_items": [], "open_questions": []
+  },
+  {
+    "id": "t5", "file": "transcripts/t5_quarterly_planning.txt", "chunk_chars": 1500,
+    "decisions": [
+      {"text": "Keep both roles open and prioritise the backend interviews this month", "quote": "we decided to keep both roles open and to prioritise the backend interviews this month", "keywords": ["roles", "backend"]},
+      {"text": "Do the final cutover on a weekend, with a schema freeze the week before", "quote": "Then we agreed to do the final cutover on a weekend, with a schema freeze the week before", "keywords": ["weekend", "cutover"]}
+    ],
+    "action_items": [
+      {"owner": "Ben", "task": "Book the interview panel for the backend role", "due": "the fifth", "quote": "I will book the interview panel for the backend role by the fifth", "keywords": ["interview"]},
+      {"owner": "Carla", "task": "Post the support lead role on two more job boards", "due": "this week", "quote": "I will post the support lead role on two more job boards this week", "keywords": ["job board"]},
+      {"owner": "Dev", "task": "Send the cutover reminder to the reporting team", "due": "two days ahead", "quote": "I will send the cutover reminder to the reporting team two days ahead", "keywords": ["reminder"]},
+      {"owner": "Hana", "task": "Take the customer survey and send it out", "due": "next Wednesday", "quote": "I will take the customer survey and send it out by next Wednesday", "keywords": ["survey"]}
+    ],
+    "open_questions": [
+      {"text": "Does the old database licence run out before the cutover?", "quote": "Does anyone know whether the old database licence runs out before the cutover", "keywords": ["licen"]}
+    ]
+  }
+]

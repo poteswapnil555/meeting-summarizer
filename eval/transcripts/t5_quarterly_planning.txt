@@ -1,0 +1,27 @@
+[00:00:05] Hana: Welcome to the quarterly planning. We have three topics: hiring, the data migration and the customer portal.
+[00:00:25] Ben: Before we start, a quick note that the office will be closed on the twelfth for maintenance.
+[00:00:41] Hana: Thanks Ben. Let's begin with hiring. We have two open roles, a backend engineer and a support lead.
+[00:01:02] Carla: The backend role has fifteen applicants. The support lead role has only four so far.
+[00:01:25] Hana: Four is low. Carla, how long can we keep the support role open before it hurts the team?
+[00:01:48] Carla: Probably another month. After that the support queue will get out of hand.
+[00:02:10] Hana: Okay, we decided to keep both roles open and to prioritise the backend interviews this month.
+[00:02:35] Ben: I can help with the interviews. I will book the interview panel for the backend role by the fifth.
+[00:02:58] Carla: And I will post the support lead role on two more job boards this week.
+[00:03:20] Hana: Great. Moving on to the data migration. Ben, where are we?
+[00:03:41] Ben: We migrated about sixty percent of the tables. The remaining tables have heavy foreign keys, so it is slower.
+[00:04:10] Dev: The reporting team is nervous about downtime. They asked for a clear cutover window.
+[00:04:34] Hana: Understandable. A weekend cutover would be safest, in my opinion.
+[00:04:55] Ben: A weekend works for me, as long as we freeze schema changes the week before.
+[00:05:20] Dev: The reporting team can live with a weekend cutover if we send them a reminder.
+[00:05:45] Hana: Then we agreed to do the final cutover on a weekend, with a schema freeze the week before.
+[00:06:12] Dev: I will send the cutover reminder to the reporting team two days ahead.
+[00:06:38] Carla: Does anyone know whether the old database licence runs out before the cutover?
+[00:07:02] Hana: I'm not sure. Nobody has checked, so let's leave that as an open point.
+[00:07:25] Hana: Now the customer portal. The beta feedback was mostly positive, with complaints about slow search.
+[00:07:52] Dev: Search is slow because we query the full table. An index would fix most of it.
+[00:08:15] Ben: Agreed, but that touches the migration tables, so it should wait until after the cutover.
+[00:08:40] Hana: Fine. Let's talk about the portal roadmap next quarter, not now.
+[00:09:02] Carla: One more thing, the customer survey is due soon and nobody owns it yet.
+[00:09:25] Hana: I will take the customer survey and send it out by next Wednesday.
+[00:09:50] Ben: Sounds good.
+[00:10:05] Hana: Okay, that's all for today. Thanks everyone for the discussion.

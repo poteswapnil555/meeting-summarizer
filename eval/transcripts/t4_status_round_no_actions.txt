@@ -1,0 +1,7 @@
+[00:00:03] Jo: Morning everyone. This is just a quick status round, no agenda items today.
+[00:00:15] Kim: The backend work is going well. The tests are all green and the deployment went fine.
+[00:00:32] Lee: Design is on track too. I finished the icons and I am now looking at the empty states.
+[00:00:50] Jo: Nice. I have nothing to add, the roadmap has not changed since last week.
+[00:01:05] Kim: Same here, no blockers from my side.
+[00:01:12] Lee: No blockers either.
+[00:01:20] Jo: Great, then we are done. Have a good day.

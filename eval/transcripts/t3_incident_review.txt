@@ -1,0 +1,12 @@
+Ravi: Thanks for joining the incident review. The outage on Tuesday lasted forty minutes.
+Elena: The root cause was an expired certificate on the payment gateway.
+Ravi: Why did monitoring not catch it?
+Elena: We had no alert on certificate expiry. That is the gap.
+Ravi: Okay, we decided to add certificate expiry alerts for every production service.
+Marcus: I will set up the expiry alerts by the end of next week.
+Ravi: Elena, please write the postmortem document and share it with the team by Friday.
+Elena: Sure, I will have it done by Friday.
+Ravi: We also decided that on-call engineers will get a runbook for certificate renewal.
+Marcus: I can draft that runbook, no deadline needed.
+Elena: Open question: should we move to automatic certificate renewal altogether?
+Ravi: Good question, let's revisit it next month.

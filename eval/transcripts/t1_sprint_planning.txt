@@ -1,0 +1,12 @@
+[00:00:04] Maya: Okay, let's get started. Today we plan sprint 14 and talk about the checkout bug.
+[00:00:21] Omar: The checkout bug is blocking about ten percent of orders. I think it is the top priority.
+[00:00:40] Maya: Agreed. So we decided to fix the checkout bug first, before any new features.
+[00:01:02] Lena: I can take it. I will write a fix for the checkout bug by Wednesday.
+[00:01:25] Omar: Good. I will review Lena's pull request as soon as it is ready.
+[00:01:48] Maya: Next, the new onboarding screens. Design is still waiting on the brand colours.
+[00:02:10] Lena: Right, Sam from design promised them last week but nothing has arrived yet.
+[00:02:33] Maya: Okay. Omar, please ask Sam for the brand colours by Tuesday.
+[00:02:50] Omar: Will do.
+[00:03:05] Maya: We also agreed to move the sprint demo from Friday to Thursday afternoon.
+[00:03:30] Lena: One question, do we know if the staging server will be upgraded before the demo?
+[00:03:48] Maya: I don't know yet. Let's keep that open. Thanks everyone.
